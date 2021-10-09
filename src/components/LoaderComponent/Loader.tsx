@@ -3,25 +3,27 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #FFFFFF;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+
     
 `
 
 
 
-export function LoaderComponent () {
+export function LoaderComponent() {
     return (
-        <Loader
-        type="Circles"
-        color="#333"
-        height={100}
-        width={100}
-        timeout={2000} //3 secs
-        />
+        <Container>
+            <Loader
+                type="Rings"
+                color="#333"
+                height={300}
+                width={100}
+                timeout={3000} //3 secs
+            />
+        </Container>
+
     )
 }

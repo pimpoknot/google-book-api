@@ -13,7 +13,7 @@ interface BookPrps extends IBook { }
 export function BookCard() {
 
   const [books, setBooks] = useState<BookPrps[]>([])
-  const [query, setQuery] = useState('Homem Aranha')
+  const [query, setQuery] = useState('harry potter')
 
   useEffect(() => {
     api.get(`${query}`)
