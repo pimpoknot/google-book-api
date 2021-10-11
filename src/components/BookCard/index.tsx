@@ -1,11 +1,12 @@
-import { Container, BookCardTitle, BookCardThumbnail, FlexBox, ReadMore,H2 } from './style'
+import { Container, BookCardTitle, BookCardThumbnail, FlexBox, ReadMore, H2, BackgroundImageOval, RetangleBox, TriangleBox } from './style'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 import IBook from '../../models/BooksModel'
-import BGImage from '../../../public/img/Oval.png';
+import Image from 'next/image'
 
+import Link from 'next/link'
 
 interface BookPrps extends IBook { }
 
@@ -13,13 +14,16 @@ interface BookPrps extends IBook { }
 export function BookCard() {
 
   const [books, setBooks] = useState<BookPrps[]>([])
-  const [query, setQuery] = useState('harry potter')
+  const [query, setQuery] = useState('homem aranha')
+
+
 
   useEffect(() => {
     api.get(`${query}`)
       .then((response) => {
         const bookDataArr = response.data.items
         setBooks(bookDataArr)
+        
       })
   }, [])
 
@@ -30,27 +34,33 @@ export function BookCard() {
       <H2>Discovery new book</H2>
       <ReadMore href="/test">Read more</ReadMore>
       <Swiper
-            spaceBetween={10}
-            slidesPerView={1.1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-      {books.map((response) => {
-        return (
-          
+        spaceBetween={10}
+        slidesPerView={1.1}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        {books.map((response) => {
+          return (
+
             <SwiperSlide>
-              <Container key={response.id} img={BGImage}>
-                <BookCardTitle>
-                  <FlexBox>
-                    <h2>{response.volumeInfo.title}</h2>
-                    <p>{response.volumeInfo.authors[0]}</p>
-                  </FlexBox>
-                  <BookCardThumbnail img={!response.volumeInfo.imageLinks?.thumbnail ? DefaultImage : response.volumeInfo.imageLinks?.thumbnail}/>
-                </BookCardTitle>
-              </Container>
+              <Link href={`/ProfileBook/${response.id}`}>
+                <Container key={response.id} >
+                  <BookCardTitle>
+                    <FlexBox>
+                      <h2>{response.volumeInfo.title}</h2>
+                      <p>{response.volumeInfo.authors && response.volumeInfo.authors[0]}</p>
+                    </FlexBox>
+                    <BookCardThumbnail img={!response.volumeInfo.imageLinks?.thumbnail ? DefaultImage : response.volumeInfo.imageLinks?.thumbnail}>
+                      <RetangleBox />
+                      <TriangleBox />
+                    </BookCardThumbnail>
+                  </BookCardTitle>
+                  <BackgroundImageOval />
+                </Container>
+              </Link>
             </SwiperSlide>
-        )
-      })}
+          )
+        })}
       </Swiper>
     </>
   )

@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-
-export const Container = styled.section`
-    padding: 1rem 0 1rem 1rem;
-`
-
-export const ContainerBook = styled.div`
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 5rem;
-
-`
-
-
 export const BookDetailsContainer = styled.div`
     width: 100%;
     min-height: 100vh;

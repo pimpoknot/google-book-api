@@ -11,6 +11,7 @@ export const InputBox = styled.div`
     border-radius: 10px;
     display: flex;
     align-items: center;
+
 `
 
 export const Input = styled.input`
@@ -18,6 +19,10 @@ export const Input = styled.input`
     padding: 1rem;
     width: 100%;
     height: 100%;
+    font-weight: bold;
+    &::placeholder {
+        font-weight: 400;
+    }
 
     &:focus-visible {
         outline: none;

@@ -10,6 +10,7 @@ import { api } from '../services/api'
 import { LoaderComponent } from '../components/LoaderComponent/Loader'
 import { BookList } from '../components/BookList'
 import IBook from '../models/BooksModel'
+import { ReviewsComponent } from '../components/ReviewsComponent'
 
 interface BookPrps extends IBook { }
 
@@ -63,8 +64,9 @@ const Home: NextPage = () => {
               <GreetingsMessage />
               <Container>
                 <BookCard />
-                <CurrentlyRead />
               </Container>
+              <CurrentlyRead />
+              <ReviewsComponent />
             </>
           )}
         </>

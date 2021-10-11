@@ -3,7 +3,7 @@ interface IBook {
   id: string;
   volumeInfo: {
     title: string;
-    authors: []
+    authors: string;
     subtitle: string;
     description?: string;
     imageLinks?: {

@@ -10,12 +10,14 @@ export const Container = styled.div`
       font-size: 16px;
       margin: 0;
       color: rgba(49, 49, 49, 0.8);
+      font-family: SF Pro, sans-serif;
   }
 
   p{
       margin: 0;
       font-size: 13px;
       color: rgba(49, 49, 49, 0.8);
+      margin-top: 0.35rem;
   }
 
 `
@@ -37,4 +39,6 @@ export const ImageContainer = styled.div<ImageProps>`
     justify-content:center;
     background-image: url(${props => props.img});
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 `
