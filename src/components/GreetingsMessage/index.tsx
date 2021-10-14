@@ -4,7 +4,7 @@ export function GreetingsMessage () {
     return(
      <TextContainer>
          <TextH2>Hi, 
-            <TextSpan> Marcos 👋</TextSpan>
+            <TextSpan> Maverick 👋</TextSpan>
          </TextH2>
          
      </TextContainer>

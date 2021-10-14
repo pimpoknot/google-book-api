@@ -40,8 +40,8 @@ export const FlexBox = styled.div`
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    max-width: 50%;
-    margin-bottom: 2rem;
+    max-width: 60%;
+    min-width: 150px;
 
 `
 
@@ -66,6 +66,10 @@ export const BookCardTitle = styled.div`
         font-weight: lighter;
         margin: 0;
         margin-top: 0.35rem;
+    }
+
+    p + p{
+        margin-top: 1rem;
     }
 `
 

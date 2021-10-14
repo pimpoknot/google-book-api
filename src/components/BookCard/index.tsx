@@ -17,12 +17,11 @@ export function BookCard() {
   const [books, setBooks] = useState<BookPrps[]>([])
   const [query, setQuery] = useState('all')
 
-
-
   useEffect(() => {
     api.get(`${query}`)
       .then((response) => {
         const bookDataArr = response.data.items
+        getViews(1, 1000)
         setBooks(bookDataArr)
 
       })
@@ -30,7 +29,8 @@ export function BookCard() {
 
   let DefaultImage = 'https://via.placeholder.com/150';
 
-  const views = getViews(1, 1000)
+  // Static Views
+  const StaticViews = getViews(1, 1000)
 
   return (
     <>
@@ -54,10 +54,7 @@ export function BookCard() {
                     <FlexBox>
                       <h2>{response.volumeInfo.title}</h2>
                       <p>{response.volumeInfo.authors && response.volumeInfo.authors[0]}</p>
-                      <p>{
-                          
-                         }
-                        + Read now </p>
+                      <p>{StaticViews}+ Read now </p>
                     </FlexBox>
                     <BookCardThumbnail img={!response.volumeInfo.imageLinks?.thumbnail ? DefaultImage : response.volumeInfo.imageLinks?.thumbnail}>
                       <RetangleBox />

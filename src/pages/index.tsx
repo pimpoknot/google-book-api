@@ -5,14 +5,13 @@ import { GreetingsMessage } from '../components/GreetingsMessage'
 import { Container, ContainerBook } from '../styles/Home/style'
 import { BookCard } from '../components/BookCard'
 import { CurrentlyRead } from '../components/CurrentlyRead'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { api } from '../services/api'
 import { LoaderComponent } from '../components/LoaderComponent/Loader'
 import { BookList } from '../components/BookList'
 import IBook from '../models/BooksModel'
 import { ReviewsComponent } from '../components/ReviewsComponent'
-import { lastRead } from '../services/LastReading'
-// import { lastRead } from '../services/LastReading'
+
 
 
 interface BookPrps extends IBook { }
