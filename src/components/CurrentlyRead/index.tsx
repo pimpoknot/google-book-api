@@ -32,7 +32,7 @@ export function CurrentlyRead(props: any) {
                     <BoxContainer>
                         <ImageBox img={!LastReading?.volumeInfo.imageLinks ? DefaultImage : LastReading.volumeInfo.imageLinks.thumbnail} />
                         <TextContainer>
-                            <h3>{!LastReading ? 'Ultima Leitura vazia' : LastReading.volumeInfo.title}</h3>
+                            <h3>{!LastReading ? 'empty list' : LastReading.volumeInfo.title}</h3>
                             <p>{!LastReading ? '' : LastReading.volumeInfo.authors[0]}</p>
                             <ViewsContainer>
                                 <Image src={CurrentlyImage} alt={CurrentlyImage} />

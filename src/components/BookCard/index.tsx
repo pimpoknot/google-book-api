@@ -7,6 +7,7 @@ import IBook from '../../models/BooksModel'
 import Image from 'next/image'
 
 import Link from 'next/link'
+import { getViews } from '../../utils/randomNumber';
 
 interface BookPrps extends IBook { }
 
@@ -23,11 +24,13 @@ export function BookCard() {
       .then((response) => {
         const bookDataArr = response.data.items
         setBooks(bookDataArr)
-        
+
       })
   }, [])
 
   let DefaultImage = 'https://via.placeholder.com/150';
+
+  const views = getViews(1, 1000)
 
   return (
     <>
@@ -51,6 +54,10 @@ export function BookCard() {
                     <FlexBox>
                       <h2>{response.volumeInfo.title}</h2>
                       <p>{response.volumeInfo.authors && response.volumeInfo.authors[0]}</p>
+                      <p>{
+                          
+                         }
+                        + Read now </p>
                     </FlexBox>
                     <BookCardThumbnail img={!response.volumeInfo.imageLinks?.thumbnail ? DefaultImage : response.volumeInfo.imageLinks?.thumbnail}>
                       <RetangleBox />
