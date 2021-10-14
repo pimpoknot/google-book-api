@@ -1,30 +1,22 @@
-import type { NextPage } from 'next'
-import { Menu } from '../components/Menu'
-import { InputSearch } from '../components/InputSearch'
-import { GreetingsMessage } from '../components/GreetingsMessage'
-import { Container, ContainerBook } from '../styles/Home/style'
-import { BookCard } from '../components/BookCard'
-import { CurrentlyRead } from '../components/CurrentlyRead'
 import { useEffect, useState } from 'react'
-import { api } from '../services/api'
-import { LoaderComponent } from '../components/LoaderComponent/Loader'
-import { BookList } from '../components/BookList'
-import IBook from '../models/BooksModel'
-import { ReviewsComponent } from '../components/ReviewsComponent'
-import { lastRead } from '../services/LastReading'
-// import { lastRead } from '../services/LastReading'
-
+import { BookList } from '../../components/BookList'
+import { InputSearch } from '../../components/InputSearch'
+import { LoaderComponent } from '../../components/LoaderComponent/Loader'
+import { Menu } from '../../components/Menu'
+import IBook from '../../models/BooksModel'
+import { api } from '../../services/api'
+import { Container, ContainerBook, TextEmpty, ArrowBack } from './style'
+import Link from 'next/link'
+import Image from 'next/image'
 
 interface BookPrps extends IBook { }
 
-const Home: NextPage = (props) => {
-
-
+export default function SearchPage() {
 
   const [books, setBooks] = useState<BookPrps[]>([])
   const [query, setQuery] = useState('')
   const [loading, isLoading] = useState(false)
-  
+
 
   useEffect(() => {
     isLoading(true)
@@ -51,12 +43,9 @@ const Home: NextPage = (props) => {
     setQuery(event.target.value)
   }
 
-  const handleFormSubmit = (event: any) => {
-    setQuery(event.target.value)
-  }
 
   let DefaultImage = 'https://via.placeholder.com/150';
-
+  const [amptySearch, setAmptySearch] = useState(false)
 
 
 
@@ -66,24 +55,18 @@ const Home: NextPage = (props) => {
         placeholder="Search book"
         value={query}
         handleInputChange={handleInputChange}
-        handleFormSubmit={handleFormSubmit}
       />
+      <ArrowBack>
+        <Link href="/">
+          <a>
+            <Image height={16} width={16} src={"/img/Back.svg"} alt={"Voltar"} />
+          </a>
+        </Link>
+      </ArrowBack>
       {query === '' ? (
-        <>
-          {loading ? (
-            <LoaderComponent />
-          ) : (
-            <>
-              <GreetingsMessage />
-              <Container>
-                <BookCard />
-              </Container>
-                {/* <p>{LastReading.volumeInfo.title}</p> */}
-                <CurrentlyRead />
-              <ReviewsComponent />
-            </>
-          )}
-        </>
+        <TextEmpty>
+          <h2>Seach Ampty</h2>
+        </TextEmpty>
       ) : (
         <ContainerBook>
           {books.map((books) => {
@@ -102,7 +85,3 @@ const Home: NextPage = (props) => {
     </>
   )
 }
-
-
-
-export default Home

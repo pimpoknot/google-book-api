@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
-    padding: 3rem 0;
+
     width: 90%;
     h2 {
         padding-left: 1rem;

@@ -124,3 +124,18 @@ export const TriangleBox = styled.div`
     left: -7px;
     background-image: url("/img/Triangle.svg");
 `
+
+export const TitleAlign = styled.div`
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        margin: 0;
+    }
+
+    a{  
+        margin: 0;
+        margin-right: 0.65rem;
+    }
+`

@@ -1,4 +1,4 @@
-import { Container, BookCardTitle, BookCardThumbnail, FlexBox, ReadMore, H2, BackgroundImageOval, RetangleBox, TriangleBox } from './style'
+import { Container, BookCardTitle, BookCardThumbnail, FlexBox, ReadMore, H2, BackgroundImageOval, RetangleBox, TriangleBox, TitleAlign } from './style'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import React, { useEffect, useState } from 'react'
@@ -14,7 +14,7 @@ interface BookPrps extends IBook { }
 export function BookCard() {
 
   const [books, setBooks] = useState<BookPrps[]>([])
-  const [query, setQuery] = useState('homem aranha')
+  const [query, setQuery] = useState('all')
 
 
 
@@ -31,13 +31,15 @@ export function BookCard() {
 
   return (
     <>
-      <H2>Discovery new book</H2>
-      <ReadMore href="/test">Read more</ReadMore>
+      <TitleAlign>
+        <H2>Discovery new book</H2>
+        <ReadMore href="/SearchPage">More</ReadMore>
+      </TitleAlign>
       <Swiper
         spaceBetween={10}
         slidesPerView={1.1}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('')}
+        onSwiper={(swiper) => console.log('')}
       >
         {books.map((response) => {
           return (

@@ -10,7 +10,6 @@ export const ContainerBook = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 5rem;
-
 `
 
 
@@ -24,9 +23,9 @@ export const BookDetailsContainer = styled.div`
       background: rgba(255, 246, 229, 1);
       border-radius: 0 0 100px 0;
       background-image: url("/img/Oval-1.svg"), url("/img/Oval-4.svg"),
-        url("/img/Oval-2.svg"), url("/img/Oval-3.svg"), url("/img/Oval.png");
+        url("/img/Oval-no-bg.svg"), url("/img/Oval-3.svg"), url("/img/Oval-bg.svg");
       background-repeat: no-repeat;
-      background-position: 125% -20%, 74% 95%, 72% 28%, 22% 53%, 11% 47%;
+      background-position: 25% 48%, 74% 95%, 72% 28%, 15% 43%, 100% 0%;
     }
   
 `;
@@ -34,6 +33,7 @@ export const BookDetailsContainer = styled.div`
 export const BookDetailsContent = styled.div`
     width: 90%;
     margin: 4.2rem auto 0;
+    padding-bottom: 6rem;
     h1 {
       color: #333;
       font-size: 1.5rem;
@@ -72,16 +72,15 @@ export const ArrowBack = styled.div`
 `;
 
 export const BookDetailsBar = styled.div`
-  background: ${({ theme }) => theme.colors.navDetailsBackground};
+  background: #FFFFFF;
   position: fixed;
   display: flex;
-  left: 50%;
-  transform: translateX(-50%);
+
   bottom: 3.5rem;
   align-items: center;
   justify-content: space-around;
   height: 3.5rem;
-  width: 23rem;
+  width: 100%;
   border-radius: 4px;
   margin: 0 auto;
   box-shadow: 6px 6px 23px rgba(107, 103, 70, 0.2);
@@ -92,7 +91,7 @@ export const BookDetailsBar = styled.div`
     gap: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
-    color: ${({ theme }) => theme.colors.textPrimary};
+
     & + a {
       padding-left: 1.625rem;
       border-left: 1px solid #979797;

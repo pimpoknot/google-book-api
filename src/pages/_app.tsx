@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
+
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
