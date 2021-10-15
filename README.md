@@ -1,5 +1,5 @@
 
-### Developer by: 
+### Develop by: 
 <table>
   <tr>
     <td align="center">
