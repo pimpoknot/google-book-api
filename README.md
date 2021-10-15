@@ -48,14 +48,14 @@
 For install
 ```bash
 npm install
-# ou
+# or
 yarn
 ```
 for run:
 
 ```bash
 npm run dev
-# ou
+# or
 yarn dev
 ```
 
