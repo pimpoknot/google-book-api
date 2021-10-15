@@ -25,7 +25,7 @@
 
 ---
 
-## 📁 Component: Folder Structure
+## 📁 Component: Folder Explanation
 
  `BookCard` : This component be responsible to show Books in the main card<br><br>
  `BookList`: This component be responsible to get all query from api and show as list<br><br>
