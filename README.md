@@ -31,7 +31,7 @@
 
 
 ---
-## Who to install and run the application
+## How to install and run the application
 
 For install
 ```bash
